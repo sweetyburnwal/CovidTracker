@@ -1,0 +1,30 @@
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    States
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngFor="let item of covidList | keyvalue">
+    <a class="dropdown-item" href="#">{{item.key}}</a>
+  </div>
+</div>
+<div class="space">
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">State/UT</th>
+    <th scope="col">Confirmed</th>
+    <th scope="col">Active</th>
+    <th scope="col">Recovered</th>
+    <th scope="col">Deceased</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of covidList | keyvalue">
+    <th scope="row">{{item.key}}</th>
+    <td>{{item.value['confirmed']}}</td>
+    <td>{{item.value['active']}}</td>
+    <td>{{item.value['recovered']}}</td>
+    <td>{{item.value['deceased']}}</td>
+  </tr>
+  </tbody>
+</table>
+</div>
